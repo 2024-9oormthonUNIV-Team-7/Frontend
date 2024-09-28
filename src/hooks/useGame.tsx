@@ -4,7 +4,7 @@ import { MinigameResponse } from 'types/MinigameResponse.type';
 export const getMinigames = async (): Promise<MinigameResponse> => {
   const response = await defaultAxios.get<MinigameResponse>(`/api/v1/mini-game`);
 
-  if (response.data) {
+  if (response.status === 200) {
     console.log(response.data);
   }
   return response.data;
