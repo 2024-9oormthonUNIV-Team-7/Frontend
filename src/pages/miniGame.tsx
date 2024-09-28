@@ -71,10 +71,12 @@ const MiniGame: React.FC = () => {
   };
 
   const currentGameDescription = gameList.find((game) => game.name === gameType)?.description || '';
+  const currentGameId = gameList.find((game) => game.name === gameType)?.id || 0; // 현재 게임의 ID 가져오기
 
   return (
     <div className="flex flex-col items-center">
-      <NavBar subject="game" heart />
+      <NavBar subject="game" heart category="mini_game" itemId={currentGameId} />{' '}
+      {/* 현재 게임 ID 전달 */}
       <ShowGame
         name={gameType}
         onButtonClick={isRunning ? () => handleModalOpen(handleNextGame) : handleNextGame}
