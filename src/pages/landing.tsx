@@ -40,7 +40,7 @@ const Landing: React.FC = () => {
         <p className="text-center text-[13px] text-txt_secondary">
           카카오 X 구름톤 유니브 연합 해커톤 7팀
         </p>
-        <XLargeButton text="구글로 시작하기" bgColor="bg-white" onClick={handleGoogleLogin} img />
+        <XLargeButton text="구글로 시작하기" bgColor="bg-white" onClick={handlePlanPage} img='google' />
       </div>
     </div>
   );
