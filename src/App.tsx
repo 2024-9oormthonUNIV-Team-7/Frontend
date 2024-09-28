@@ -7,8 +7,8 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div className="flex justify-center items-center w-screen h-screen bg-green-200">
-      <div className="w-full h-full">
+    <div className="flex justify-center items-center w-screen h-full bg-green-200">
+      <div className="w-full h-screen bg-green-200">
         <QueryClientProvider client={queryClient}>
           <BrowserRouter>
             <AppRoutes />
