@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import titleContentsData from 'data/titleContentsData';
 import { useHistory } from 'react-router-dom';
+import { useMutation } from 'react-query';
+import axios from 'axios';
 
-const NavBar: React.FC<{ subject: string; nonIcon?: boolean }> = ({ subject, nonIcon }) => {
+const NavBar: React.FC<{
+  subject: string;
+  nonIcon?: boolean;
+  heart?: boolean;
+}> = ({ subject, nonIcon, heart }) => {
   const history = useHistory();
 
   const goBack = () => {
@@ -14,7 +20,7 @@ const NavBar: React.FC<{ subject: string; nonIcon?: boolean }> = ({ subject, non
       <button type="button" className="absolute left-[20px]" onClick={goBack}>
         <img src="/assets/left_arrow.svg" alt="left_arrow" />
       </button>
-      <div className="flex items-center justify-center gap-[4px]">
+      <div className="flex items-center justify-center gap-[4px] relative">
         {nonIcon ? (
           ''
         ) : (
@@ -23,6 +29,13 @@ const NavBar: React.FC<{ subject: string; nonIcon?: boolean }> = ({ subject, non
         <p className="text-base text-center">
           {nonIcon ? `${subject}` : titleContentsData[subject].title}
         </p>
+        {heart === true ? (
+          <button type="button" className="absolute left-[100px]" onClick={goBack}>
+            <img src="/assets/white_heart.svg" alt="left_arrow" className="h-[]" />
+          </button>
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );

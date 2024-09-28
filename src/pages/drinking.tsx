@@ -1,4 +1,3 @@
-import SquareBox from 'components/box/SquareBox';
 import { LargeButton } from 'components/Button/Button';
 import GameIcon from 'components/icon/game';
 import NavBar from 'components/Bar/NavBar';
@@ -8,7 +7,12 @@ import React from 'react';
 const Drinking: React.FC = () => {
   return (
     <div className="flex flex-col relative h-full">
-      <NavBar subject="drink" />
+      <NavBar subject="drink" heart={true} />
+      <img
+        src="/assets/white_heart.svg"
+        alt="white-heart"
+        className="absolute h-[24px] w-[24px] right-[20px] top-[16px]"
+      />
       {/* 게임 종류 및 게임명 */}
       <div className="flex flex-col justify-start items-center mt-[162px]">
         <div className="mx-auto my-auto">
