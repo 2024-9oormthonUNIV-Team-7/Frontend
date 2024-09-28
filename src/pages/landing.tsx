@@ -23,7 +23,7 @@ const Landing: React.FC = () => {
       history.push('/plans');
     } else {
       // 로그인되지 않은 경우 첫 페이지로 리다이렉트
-      history.push('/');
+      history.push('/')
     }
   }, [history]);
 
