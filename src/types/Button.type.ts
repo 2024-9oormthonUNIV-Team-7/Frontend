@@ -3,5 +3,5 @@ export interface ButtonProps {
   textColor?: string;
   bgColor?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  img?: boolean;
+  img?: string;
 }

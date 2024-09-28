@@ -1,5 +1,3 @@
-import ExpandedBox from 'components/box/ExpandedBox';
-import NavBar from 'components/Bar/NavBar';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import SelectBar from 'components/Bar/SelectBar';

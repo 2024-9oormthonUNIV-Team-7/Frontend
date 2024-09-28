@@ -37,7 +37,7 @@ const NavBar: React.FC<{
       <button type="button" className="absolute left-[20px]" onClick={goBack}>
         <img src="/assets/left_arrow.svg" alt="left_arrow" />
       </button>
-      <div className="flex items-center justify-center gap-[4px]">
+      <div className="flex items-center justify-center gap-[4px] relative">
         {nonIcon ? (
           ''
         ) : (
@@ -46,6 +46,13 @@ const NavBar: React.FC<{
         <p className="text-base text-center">
           {nonIcon ? subject : titleContentsData[subject].title}
         </p>
+        {heart === true ? (
+          <button type="button" className="absolute left-[100px]" onClick={goBack}>
+            <img src="/assets/white_heart.svg" alt="left_arrow" className="h-[]" />
+          </button>
+        ) : (
+          ''
+        )}
       </div>
       {heart && (
         <button type="button" className="absolute right-[20px]" onClick={handleHeartClick}>
