@@ -2,7 +2,11 @@ import React from 'react';
 import titleContentsData from 'data/titleContentsData';
 import { useHistory } from 'react-router-dom';
 
-const NavBar: React.FC<{ subject: string; nonIcon?: boolean }> = ({ subject, nonIcon }) => {
+const NavBar: React.FC<{ subject: string; nonIcon?: boolean; heart?: boolean }> = ({
+  subject,
+  nonIcon,
+  heart,
+}) => {
   const history = useHistory();
 
   const goBack = () => {
@@ -24,6 +28,13 @@ const NavBar: React.FC<{ subject: string; nonIcon?: boolean }> = ({ subject, non
           {nonIcon ? `${subject}` : titleContentsData[subject].title}
         </p>
       </div>
+      {heart ? (
+        <button type="button" className="absolute right-[20px]" onClick={goBack}>
+          <img src="/assets/heart.svg" alt="heart" />{' '}
+        </button>
+      ) : (
+        ''
+      )}
     </div>
   );
 };
