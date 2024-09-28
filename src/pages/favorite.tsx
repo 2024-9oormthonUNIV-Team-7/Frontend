@@ -7,6 +7,7 @@ import { getFavorite } from 'hooks/useFavorite';
 import { useQuery } from 'react-query';
 import { Favorites } from 'types/Favorites.type';
 import Nofavorite from 'components/Modal/Nofavorite';
+import MintSection from 'components/Mypage/MintSection';
 
 const Favorite: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState<number>(0);
@@ -59,6 +60,7 @@ const Favorite: React.FC = () => {
           activeIndex={selectedTab} // 현재 선택된 탭의 인덱스 전달
           onButtonClick={handleButtonClick}
         />
+        <MintSection favoriteList={filteredList} /> {/* MintSection에 filteredList 전달 */}
         <div className="flex flex-col gap-[16px]">
           {filteredList.length > 0 ? (
             filteredList.map((item, index) => (
