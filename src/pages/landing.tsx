@@ -9,7 +9,7 @@ const Landing: React.FC = () => {
 
   // 백엔드로 구글 인증 요청
   const handleGoogleLogin = () => {
-    const backendGoogleAuthUrl = 'https://floating.site/oauth2/authorization/google';
+    const backendGoogleAuthUrl = 'http://floating.site:8080/oauth2/authorization/google';
     // 백엔드의 구글 OAuth 로그인 엔드포인트로 리다이렉트
     window.location.href = backendGoogleAuthUrl;
   };
@@ -21,10 +21,8 @@ const Landing: React.FC = () => {
     if (accessToken) {
       // 이미 로그인된 상태이면 /plans로 자동으로 리다이렉트
       history.push('/plans');
-    } else {
-      // 로그인되지 않은 경우 첫 페이지로 리다이렉트
-      history.push('/')
     }
+    // 로그인되지 않은 경우 아무것도 하지 않음
   }, [history]);
 
   return (
