@@ -1,15 +1,8 @@
-<<<<<<< Updated upstream
-=======
 import React, { useState, useEffect } from 'react';
->>>>>>> Stashed changes
 import { LargeButton } from 'components/Button/Button';
 import NavBar from 'components/Bar/NavBar';
 import Description from 'components/ToolTips/Description';
 import EtcBox from 'components/box/EtcBox';
-<<<<<<< Updated upstream
-
-const BalanceGame: React.FC = () => {
-=======
 import { useQuery } from 'react-query';
 import { BalancegameResponse } from 'types/BalancegameResponse';
 import { getBalancegames } from 'hooks/useBalance';
@@ -36,8 +29,6 @@ const BalanceGame: React.FC = () => {
       setCurrentQuestion((prev) => (prev + 1) % balanceList?.length);
     }
   };
-
->>>>>>> Stashed changes
   return (
     <div className="flex justify-center items-center">
       <div className="flex flex-col w-[375px] h-[860px] p-4 bg-background_color relative">
@@ -45,15 +36,11 @@ const BalanceGame: React.FC = () => {
           <NavBar subject="vs" />
           <div className="flex flex-col justify-center items-center ">
             <div className="h-[196px]">
-<<<<<<< Updated upstream
-              <EtcBox subject="balance" color="white" balance="100% 확률 10억" />
-=======
               <EtcBox
                 subject="balance"
                 color="main"
                 balance={balanceList[currentQuestion]?.question_a}
               />
->>>>>>> Stashed changes
             </div>
             <img
               src="/assets/vs.svg"
@@ -61,15 +48,11 @@ const BalanceGame: React.FC = () => {
               className="h-[48px] w-[48px] fill-current text-red-300 mx-2"
             />
             <div className="h-[196px]">
-<<<<<<< Updated upstream
-              <EtcBox subject="balance" color="white" balance="50% 확률 1,000억" />
-=======
               <EtcBox
                 subject="balance"
                 color="main"
                 balance={balanceList[currentQuestion]?.question_b}
               />
->>>>>>> Stashed changes
             </div>
           </div>
           <div className="flex flex-col justify-center items-center">
