@@ -30,8 +30,8 @@ const SmallTalk: React.FC = () => {
     }
   };
   return (
-    <div className="p-[11px] flex flex-col items-center">
-      <NavBar subject="drink" />
+    <div className="flex flex-col justify-center items-center">
+      <NavBar subject="vs" />
       <div className="flex flex-col justify-center items-center relative">
         <div className="flex gap-2 justify-center items-center h-[450px] text-txt_secondary">
           <img src="/assets/cloud.svg" alt="cloud-emoji" className="h-6 w-6" />
