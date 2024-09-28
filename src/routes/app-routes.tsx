@@ -10,6 +10,8 @@ import ContentRecommendation from '../pages/contentRecommendation';
 import MiniGame from '../pages/miniGame';
 import TeamProject from '../pages/teamProject';
 import NetworkingParty from '../pages/networkingParty';
+import favorite from 'pages/favorite';
+import developer from 'pages/developer';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -19,6 +21,12 @@ const AppRoutes: React.FC = () => {
 
       {/* 플랜 페이지 */}
       <Route exact path="/plans" component={Plans} />
+
+      {/* 즐겨찾기 페이지 */}
+      <Route exact path="/favorite" component={favorite} />
+
+      {/* 즐겨찾기 페이지 */}
+      <Route exact path="/dev" component={developer} />
 
       {/* 아이스 브레이킹 페이지와 그 하위 페이지 */}
       <Route exact path="/plans/ice-breaking" component={IceBreaking} />

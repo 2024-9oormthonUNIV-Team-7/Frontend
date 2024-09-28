@@ -19,7 +19,7 @@ const SelectBar: React.FC<{
   }, [selected]);
 
   return (
-    <div className="relative flex w-full py-[8px] text-gray-500 justify-between items-center border border-x-0 border-t-0 border-b-gray-500">
+    <div className="relative flex w-full py-[8px] mb-[32px] text-gray-500 justify-between items-center border border-x-0 border-t-0 border-b-gray-500">
       <div
         className="absolute w-[30px] h-[2px] bg-txt_primary"
         style={{ left: `${indicatorPosition}px`, top: '100%', transition: 'left 0.3s ease' }} // border-bottom과 겹치도록 위치 조정
