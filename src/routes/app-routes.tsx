@@ -12,7 +12,6 @@ import TeamProject from '../pages/teamProject';
 import NetworkingParty from '../pages/networkingParty';
 import Favorite from 'pages/favorite';
 import Developer from 'pages/developer';
-import PrivateRoute from './private-app-routes';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -20,20 +19,20 @@ const AppRoutes: React.FC = () => {
       {/* Public Route: Landing Page */}
       <Route exact path="/" component={Landing} />
 
-      {/* Private Routes: Only accessible when logged in */}
-      <PrivateRoute exact path="/plans" component={Plans} />
-      <PrivateRoute exact path="/favorite" component={Favorite} />
-      <PrivateRoute exact path="/dev" component={Developer} />
-      <PrivateRoute exact path="/plans/ice-breaking" component={IceBreaking} />
-      <PrivateRoute exact path="/plans/ice-breaking/balance-game" component={BalanceGame} />
-      <PrivateRoute path="/plans/ice-breaking/small-talk" component={SmallTalk} />
-      <PrivateRoute path="/plans/ice-breaking/mini-game" component={MiniGame} />
-      <PrivateRoute exact path="/plans/content-recommendation" component={ContentRecommendation} />
-      <PrivateRoute exact path="/plans/content-recommendation/drinking" component={Drinking} />
-      <PrivateRoute path="/plans/content-recommendation/team-project" component={TeamProject} />
-      <PrivateRoute path="/plans/content-recommendation/networking-party" component={NetworkingParty} />
+      {/* Routes: Accessible to all users */}
+      <Route exact path="/plans" component={Plans} />
+      <Route exact path="/favorite" component={Favorite} />
+      <Route exact path="/dev" component={Developer} />
+      <Route exact path="/plans/ice-breaking" component={IceBreaking} />
+      <Route exact path="/plans/ice-breaking/balance-game" component={BalanceGame} />
+      <Route path="/plans/ice-breaking/small-talk" component={SmallTalk} />
+      <Route path="/plans/ice-breaking/mini-game" component={MiniGame} />
+      <Route exact path="/plans/content-recommendation" component={ContentRecommendation} />
+      <Route exact path="/plans/content-recommendation/drinking" component={Drinking} />
+      <Route path="/plans/content-recommendation/team-project" component={TeamProject} />
+      <Route path="/plans/content-recommendation/networking-party" component={NetworkingParty} />
       
-      {/* Fallback Route: Redirect all other routes to Landing if not logged in */}
+      {/* Fallback Route: Redirect all other routes to Landing */}
       <Route path="*">
         <Redirect to="/" />
       </Route>
