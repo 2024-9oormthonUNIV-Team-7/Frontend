@@ -11,7 +11,7 @@ const ContentRecommendation: React.FC = () => {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <NavBar subject="아이스브레이킹" nonIcon />
+      <NavBar subject="아이스브레이킹" nonIcon heart />
       <div className="absolute bottom-[47px] flex flex-col justify-center items-center">
         <img className="mb-[-45px]" src="/assets/Char/lip.svg" alt="cloud_lip" />
         <div className="flex flex-col justify-center items-center gap-y-[16px]">
