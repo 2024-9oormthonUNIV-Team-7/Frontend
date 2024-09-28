@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { LargeButton } from 'components/Button/Button';
+import { XLargeButton } from 'components/Button/Button';
 import NavBar from 'components/Bar/NavBar';
 import Description from 'components/ToolTips/Description';
 import EtcBox from 'components/box/EtcBox';
@@ -29,43 +29,34 @@ const BalanceGame: React.FC = () => {
       setCurrentQuestion((prev) => (prev + 1) % balanceList?.length);
     }
   };
+
   return (
-    <div className="flex justify-center items-center">
-      <div className="flex flex-col w-[375px] h-[860px] p-4 bg-background_color relative">
-        <div className="mt-[30px]">
-          <NavBar subject="vs" />
-          <div className="flex flex-col justify-center items-center ">
-            <div className="h-[196px]">
-              <EtcBox
-                subject="balance"
-                color="main"
-                balance={balanceList[currentQuestion]?.question_a}
-              />
-            </div>
-            <img
-              src="/assets/vs.svg"
-              alt="red-vs"
-              className="h-[48px] w-[48px] fill-current text-red-300 mx-2"
+    <div className="flex flex-col justify-center items-center">
+      <NavBar subject="vs" />
+      <div className="flex flex-col w-[375px] h-[860px] bg-background_color relative">
+        <div className="flex flex-col justify-center items-center gap-[10px]">
+          <div className="h-[196px]">
+            <EtcBox
+              subject="balance"
+              color="main"
+              balance={balanceList[currentQuestion]?.question_a}
             />
-            <div className="h-[196px]">
-              <EtcBox
-                subject="balance"
-                color="main"
-                balance={balanceList[currentQuestion]?.question_b}
-              />
-            </div>
           </div>
-          <div className="flex flex-col justify-center items-center">
-            <div className="absolute top-[500px] left-[90px]">
-              <Description text="어떤 걸 고를까요?" />
-              <img
-                src="/assets/GoormCharacter.svg"
-                alt="cloud-character"
-                className="w-[192px] h-[192px]"
-              />
-            </div>
-            <div className="absolute left-[20px] top-[700px] w-[335px]">
-              <LargeButton text="다음" />
+          <img src="/assets/red-vs.svg" alt="red-vs" className="h-[12.58px] w-[18.87px]" />
+          <div className="h-[196px]">
+            <EtcBox
+              subject="balance"
+              color="main"
+              balance={balanceList[currentQuestion]?.question_b}
+            />
+          </div>
+        </div>
+        <div className="flex flex-col justify-center items-center">
+          <div className="absolute flex flex-col justify-center items-center w-[350px] bottom-[70px]">
+            <Description text="어떤 걸 고를까요?" />
+            <img className="mb-[-45px]" src="/assets/GoormCharacter.svg" alt="goorm-character" />
+            <div className="w-[335px]">
+              <XLargeButton text="다른 게임 할래요" onClick={handleNextQuestion} />
             </div>
           </div>
         </div>

@@ -74,7 +74,7 @@ const MiniGame: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <NavBar subject="game" />
+      <NavBar subject="game" heart={true} />
       <ShowGame
         name={gameType}
         onButtonClick={isRunning ? () => handleModalOpen(handleNextGame) : handleNextGame}
