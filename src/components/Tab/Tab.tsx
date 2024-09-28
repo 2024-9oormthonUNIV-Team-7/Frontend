@@ -3,7 +3,7 @@ import { TabProps } from 'types/Tab.type';
 
 export const Tab = ({ buttonTexts, activeIndex, onButtonClick }: TabProps) => {
   return (
-    <div className="w-full overflow-x-auto scrollbar-hidden pl-[20px] py-[10px] ">
+    <div className="w-full overflow-x-auto scrollbar-hidden px-[20px] py-[10px]">
       <div className="flex flex-row justify-start items-center gap-[10px] whitespace-nowrap">
         {buttonTexts.map((text, index) => (
           <XSmallButton
