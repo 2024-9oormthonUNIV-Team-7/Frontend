@@ -72,7 +72,7 @@ export const XLargeButton = ({
         bgColor ? bgColor : 'bg-main_primary'
       }`}
     >
-      {img ? <img src="/assets/google.svg" alt="google" /> : ''}
+      {img ? <img src={`/assets/${img}.svg`} alt="google" /> : ''}
       <span className={`text-2xl leading-[140%] flex justify-center items-center ${textColor}`}>
         {text}
       </span>
