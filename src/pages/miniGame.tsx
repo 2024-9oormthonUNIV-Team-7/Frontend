@@ -23,9 +23,11 @@ const MiniGame: React.FC = () => {
 
   // 처음 랜더링 시, undefined 나오는 것을 방지하기 위해
   useEffect(() => {
-    if (data) {
+    if (data && data.minigames && data.minigames.length > 0) { // 데이터와 게임 목록이 존재하는지 확인
       setGameList(data.minigames);
-      setGameType(data.minigames[0]?.name || '');
+      setGameType(data.minigames[0].name); // 첫 번째 게임의 이름 설정
+    } else {
+      setGameType(''); // 게임 목록이 없을 경우 기본값 설정
     }
   }, [data]);
 
