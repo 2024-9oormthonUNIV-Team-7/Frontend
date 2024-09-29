@@ -31,7 +31,7 @@ const AppRoutes: React.FC = () => {
       <Route exact path="/plans/content-recommendation/drinking" component={Drinking} />
       <Route path="/plans/content-recommendation/team-project" component={TeamProject} />
       <Route path="/plans/content-recommendation/networking-party" component={NetworkingParty} />
-      
+
       {/* Fallback Route: Redirect all other routes to Landing */}
       <Route path="*">
         <Redirect to="/" />

@@ -20,24 +20,27 @@ const Drinking: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [randomGame, setRandomGame] = useState<GameItem | null>(null);
 
-  const { data: balanceData } = useQuery<BalancegameResponse, Error>('games', getBalancegames);
-  const { data: smallTalkData } = useQuery<SmalltalkResponse, Error>('subject', getSmalltalks);
-  const { data: miniGameData } = useQuery<MinigameResponse, Error>('minigames', getMinigames);
+  const { data: balanceData } = useQuery<BalancegameResponse, Error>(
+    'balance_game',
+    getBalancegames,
+  );
+  const { data: smallTalkData } = useQuery<SmalltalkResponse, Error>('talk_subject', getSmalltalks);
+  const { data: miniGameData } = useQuery<MinigameResponse, Error>('mini_game', getMinigames);
 
   useEffect(() => {
     if (balanceData && smallTalkData && miniGameData) {
       const combinedList: GameItem[] = [
-        ...balanceData.balance_games.map((game) => ({
+        ...balanceData.balance_game.map((game) => ({
           id: game.id,
-          name: game.question_a, // 예시로 question_a 사용
+          name: game.questionA, // 예시로 question_a 사용
           description: game.description || '게임 설명이 없습니다.',
         })),
-        ...smallTalkData.talk_subjects.map((subject) => ({
+        ...smallTalkData.talk_subject.map((subject) => ({
           id: subject.id,
           name: subject.subject,
           description: subject.description || '주제 설명이 없습니다.',
         })),
-        ...miniGameData.minigames.map((game) => ({
+        ...miniGameData.mini_game.map((game) => ({
           id: game.id,
           name: game.name,
           description: game.description || '게임 설명이 없습니다.',
@@ -99,9 +102,7 @@ const Drinking: React.FC = () => {
 
         {/* 랜덤게임 모달 */}
         {showModal && (
-          <div className="absolute inset-0 h-screen flex items-center justify-center z-40 bg-txt_primary/65">
-            <SquareBox color="white" content="랜덤 게임으로 넘어갑니다!" question={true} />
-          </div>
+          <div className="absolute inset-0 h-screen flex items-center justify-center z-40 bg-txt_primary/65"></div>
         )}
       </div>
     </div>

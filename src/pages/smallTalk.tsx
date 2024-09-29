@@ -18,7 +18,7 @@ const SmallTalk: React.FC = () => {
 
   useEffect(() => {
     if (data) {
-      setSmallTalkList(data.talk_subjects);
+      setSmallTalkList(data.talk_subject);
     }
   }, [data]);
 

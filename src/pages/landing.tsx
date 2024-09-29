@@ -9,7 +9,7 @@ const Landing: React.FC = () => {
 
   // 백엔드로 구글 인증 요청
   const handleGoogleLogin = () => {
-    const backendGoogleAuthUrl = 'http://floating.site:8080/oauth2/authorization/google';
+    const backendGoogleAuthUrl = 'https://floating.site/oauth2/authorization/google';
     // 백엔드의 구글 OAuth 로그인 엔드포인트로 리다이렉트
     window.location.href = backendGoogleAuthUrl;
   };
@@ -43,7 +43,7 @@ const Landing: React.FC = () => {
         <XLargeButton
           text="구글로 시작하기"
           bgColor="bg-white"
-          onClick={handlePlanPage}
+          onClick={handleGoogleLogin}
           img="google"
         />
       </div>
