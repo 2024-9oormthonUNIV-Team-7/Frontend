@@ -1,7 +1,7 @@
 import { Minigame } from './Minigame.type';
 
 export interface MinigameResponse {
-  minigames: Minigame[];
+  mini_game: Minigame[];
   status: number;
   message: string;
 }

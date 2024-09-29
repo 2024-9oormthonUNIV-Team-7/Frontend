@@ -9,7 +9,10 @@ import { getBalancegames } from 'hooks/useBalance';
 import { Balancegame } from 'types/Balancegame.type';
 
 const BalanceGame: React.FC = () => {
-  const { data, error, isLoading } = useQuery<BalancegameResponse, Error>('games', getBalancegames);
+  const { data, error, isLoading } = useQuery<BalancegameResponse, Error>(
+    'balance_game',
+    getBalancegames,
+  );
   if (error) {
     console.log(error.message);
   }
@@ -18,7 +21,7 @@ const BalanceGame: React.FC = () => {
 
   useEffect(() => {
     if (data) {
-      setBalanceList(data.balance_games);
+      setBalanceList(data.balance_game);
     }
   }, [data]);
 
@@ -39,7 +42,7 @@ const BalanceGame: React.FC = () => {
             <EtcBox
               subject="balance"
               color="main"
-              balance={balanceList[currentQuestion]?.question_a}
+              balance={balanceList[currentQuestion]?.questionA}
             />
           </div>
           <img src="/assets/red-vs.svg" alt="red-vs" className="h-[12.58px] w-[18.87px]" />
@@ -47,7 +50,7 @@ const BalanceGame: React.FC = () => {
             <EtcBox
               subject="balance"
               color="main"
-              balance={balanceList[currentQuestion]?.question_b}
+              balance={balanceList[currentQuestion]?.questionB}
             />
           </div>
         </div>

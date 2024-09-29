@@ -18,11 +18,11 @@ const Plans: React.FC = () => {
     refetchOnWindowFocus: false, // 창 포커스 시 재조회 방지
   });
 
-  useEffect(() => {
-    if (data) {
-      setFavoriteList(data.favorite);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (data) {
+  //     setFavoriteList(data.favorite);
+  //   }
+  // }, [data]);
 
   if (error) {
     return <div>Error: {error.message}</div>; // UI에 에러 메시지 표시
